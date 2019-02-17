@@ -1,0 +1,43 @@
+{
+  "name": "fisharebest/laravel-floats",
+  "description": "Floating point support for Laravel migrations",
+  "keywords": [
+    "laravel",
+    "mysql",
+    "migration",
+    "float",
+    "double"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Greg Roach",
+      "email": "fisharebest@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "~5.6|~7.0",
+    "illuminate/database": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "php-coveralls/php-coveralls": "~2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fisharebest\\LaravelFloats\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Fisharebest\\LaravelFloats\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "aliases": {
+        "Schema": "Fisharebest\\LaravelFloats\\Schema"
+      }
+    }
+  }
+}
