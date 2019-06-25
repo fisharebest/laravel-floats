@@ -13,7 +13,7 @@ This package allows database migrations in Laravel 5 to create `FLOAT` columns i
 Sadly no.  It only supports *double-precision* floating point columns.
 If you want *single-precision* floating point, you need to use `DB::raw()`.
 
-This is despite the Laravel documentation at <https://laravel.com/docs/5.7/migrations>
+This is despite the Laravel documentation at <https://laravel.com/docs/5.8/migrations>
 which states:
                 
 > `$table->float('amount', 8, 2);` FLOAT equivalent column with a precision (total digits) and scale (decimal digits).
@@ -23,7 +23,7 @@ which states:
 You can read all about it at <https://github.com/laravel/framework/issues/3151>
 and many other issues.
 
-| In your migration              | Laravel 5.0 - 5.7 | With this package |
+| In your migration              | Laravel 5.0 - 5.8 | With this package |
 | ------------------------------ | ----------------- | ----------------- |
 | `$table->float('col');`        | `DOUBLE(8,2)`     | `FLOAT`           |
 | `$table->float('col', 0);`     | `DOUBLE`          | `FLOAT`           |
