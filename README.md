@@ -52,6 +52,10 @@ If you're using Laravel 5.4 or earlier, you'll need to replace an alias in `conf
 ]
 ```
 
+NOTE: this assumes you are using Laravel to autoload your facades using the aliases.
+
+If you explicitly import Laravel's schema builder using `use Illuminate\Support\Facades\Schema;` then you will need to change this to `use Fisharebest\LaravelFloats\Schema;`.
+
 ## How does this package work?
 
 We extend the MySQL Grammar, modify the blueprint for `float()`, and then
