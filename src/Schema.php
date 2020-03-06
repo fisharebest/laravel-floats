@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   fisharebest/laravel-floats
- * @copyright 2019 "Greg Roach" <fisharebest@gmail.com>
+ * @copyright 2020 "Greg Roach" <greg@subaqua.co.uk>
  * @licence   MIT
  */
 namespace Fisharebest\LaravelFloats;
