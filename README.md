@@ -6,7 +6,7 @@
 
 # laravel-floats
 
-This package allows database migrations in Laravel 5 and Laravel 6 to create `FLOAT` columns in MySQL.
+This package allows database migrations in Laravel 5, Laravel 6 and Laravel 7 to create `FLOAT` columns in MySQL.
 
 ## Huh? You mean that Laravel does not support floating point columns?
 
