@@ -23,7 +23,7 @@ which states:
 You can read all about it at <https://github.com/laravel/framework/issues/3151>
 and many other issues.
 
-| In your migration              | Laravel 5.0 - 6.2 | With this package |
+| In your migration              | Laravel 5.0 - 7.0 | With this package |
 | ------------------------------ | ----------------- | ----------------- |
 | `$table->float('col');`        | `DOUBLE(8,2)`     | `FLOAT`           |
 | `$table->float('col', 0);`     | `DOUBLE`          | `FLOAT`           |
