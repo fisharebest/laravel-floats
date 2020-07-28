@@ -1,7 +1,10 @@
 CHANGELOG
 =========
 
-## 1.3.0 (2020-03-R10
+## 1.4.0 (2020-07-28)
+ - Add support for Laravel 7.x.
+
+## 1.3.0 (2020-03-10)
  - Add support for Laravel 7.0.
 
 ## 1.2.0 (2019-10-09)
