@@ -112,6 +112,8 @@ matrix:
       env: LARAVEL=6.0
     - php: 7.3
       env: LARAVEL=7.0
+    - php: 7.3
+      env: LARAVEL=8.0
     - php: 7.4
       env: LARAVEL=5.0
     - php: 7.4
@@ -135,7 +137,7 @@ matrix:
     - php: 7.4
       env: LARAVEL=7.0
     - php: 7.4
-      env: LARAVEL=7
+      env: LARAVEL=8.0
 
 
 before_script:

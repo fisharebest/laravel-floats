@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 1.5.0 (2020-09-24)
+ - Add support for Laravel 8.x.
+
 ## 1.4.0 (2020-07-28)
  - Add support for Laravel 7.x.
 
