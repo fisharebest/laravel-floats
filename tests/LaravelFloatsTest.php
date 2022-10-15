@@ -6,6 +6,7 @@
  */
 namespace Fisharebest\LaravelFloats;
 
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Connection;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\MySqlConnection;
@@ -14,7 +15,7 @@ use Illuminate\Database\Schema\Grammars\SQLiteGrammar;
 use Illuminate\Database\Schema\MySqlBuilder;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Facades\Facade;
-use PHPUnit\Framework\TestCase as BaseTestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class TestLaravelFloats
@@ -23,7 +24,7 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
  * @covers \Fisharebest\LaravelFloats\MySqlGrammar
  * @covers \Fisharebest\LaravelFloats\Schema
  */
-class LaravelFloatsTest extends BaseTestCase
+class LaravelFloatsTest extends TestCase
 {
     /**
      * Test the Schema Facade.
@@ -56,9 +57,12 @@ class LaravelFloatsTest extends BaseTestCase
             ->with('mysql')
             ->willReturn($mock_connection);
 
-        $mock_application = [
-            'db' => $mock_database_manager
-        ];
+        $mock_application = $this->createMock(Application::class);
+
+        $mock_application
+            ->method('make')
+            ->with('db')
+            ->willReturn($mock_database_manager);
 
         Facade::setFacadeApplication($mock_application);
 
@@ -103,14 +107,12 @@ class LaravelFloatsTest extends BaseTestCase
             ->with(null)
             ->willReturn($mock_connection);
 
-        $mock_database_manager
-            ->method('connection')
-            ->with(null)
-            ->willReturn($mock_connection);
+        $mock_application = $this->createMock(Application::class);
 
-        $mock_application = [
-            'db' => $mock_database_manager
-        ];
+        $mock_application
+            ->method('make')
+            ->with('db')
+            ->willReturn($mock_database_manager);
 
         Facade::setFacadeApplication($mock_application);
 
@@ -131,7 +133,7 @@ class LaravelFloatsTest extends BaseTestCase
      */
     public function testNonMySqlSchema()
     {
-        $mock_connection = $this->createMock(SqliteConnection::class);
+        $mock_connection = $this->createMock(SQLiteConnection::class);
 
         $mock_connection
             ->method('withTablePrefix')
@@ -155,9 +157,12 @@ class LaravelFloatsTest extends BaseTestCase
             ->with('sqlite')
             ->willReturn($mock_connection);
 
-        $mock_application = [
-            'db' => $mock_database_manager
-        ];
+        $mock_application = $this->createMock(Application::class);
+
+        $mock_application
+            ->method('make')
+            ->with('db')
+            ->willReturn($mock_database_manager);
 
         Facade::setFacadeApplication($mock_application);
 

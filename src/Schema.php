@@ -23,7 +23,7 @@ class Schema extends BaseSchema
     public static function connection($name)
     {
         /** @var Connection $connection */
-        $connection = static::$app['db']->connection($name);
+        $connection = static::$app->make('db')->connection($name);
 
         if ($connection instanceof MySqlConnection) {
             $mysql_grammar = $connection->withTablePrefix(new MySqlGrammar());
